@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AgregarEmpleado" type="tns:AgregarEmpleado" />
+  <xs:element name="AgregarEmpleadoResponse" type="tns:AgregarEmpleadoResponse" />
+  <xs:element name="AñadirPatrocinador" type="tns:AñadirPatrocinador" />
+  <xs:element name="AñadirPatrocinadorResponse" type="tns:AñadirPatrocinadorResponse" />
+  <xs:element name="AñadirProductos" type="tns:AñadirProductos" />
+  <xs:element name="AñadirProductosResponse" type="tns:AñadirProductosResponse" />
+  <xs:element name="BuscarCliente" type="tns:BuscarCliente" />
+  <xs:element name="BuscarClienteResponse" type="tns:BuscarClienteResponse" />
+  <xs:element name="BuscarCuenta" type="tns:BuscarCuenta" />
+  <xs:element name="BuscarCuentaNomina" type="tns:BuscarCuentaNomina" />
+  <xs:element name="BuscarCuentaNominaResponse" type="tns:BuscarCuentaNominaResponse" />
+  <xs:element name="BuscarCuentaResponse" type="tns:BuscarCuentaResponse" />
+  <xs:element name="BuscarEmpleado" type="tns:BuscarEmpleado" />
+  <xs:element name="BuscarEmpleadoResponse" type="tns:BuscarEmpleadoResponse" />
+  <xs:element name="BuscarNomina" type="tns:BuscarNomina" />
+  <xs:element name="BuscarNominaResponse" type="tns:BuscarNominaResponse" />
+  <xs:element name="BuscarPatrocinador" type="tns:BuscarPatrocinador" />
+  <xs:element name="BuscarPatrocinadorResponse" type="tns:BuscarPatrocinadorResponse" />
+  <xs:element name="CambiarCheque" type="tns:CambiarCheque" />
+  <xs:element name="CambiarChequeResponse" type="tns:CambiarChequeResponse" />
+  <xs:element name="CambiarEstado" type="tns:CambiarEstado" />
+  <xs:element name="CambiarEstadoResponse" type="tns:CambiarEstadoResponse" />
+  <xs:element name="ConsultarSaldo" type="tns:ConsultarSaldo" />
+  <xs:element name="ConsultarSaldoResponse" type="tns:ConsultarSaldoResponse" />
+  <xs:element name="ContarTransferencias" type="tns:ContarTransferencias" />
+  <xs:element name="ContarTransferenciasResponse" type="tns:ContarTransferenciasResponse" />
+  <xs:element name="CrearCliente" type="tns:CrearCliente" />
+  <xs:element name="CrearClienteResponse" type="tns:CrearClienteResponse" />
+  <xs:element name="CrearCuenta" type="tns:CrearCuenta" />
+  <xs:element name="CrearCuentaResponse" type="tns:CrearCuentaResponse" />
+  <xs:element name="CrearNomina" type="tns:CrearNomina" />
+  <xs:element name="CrearNominaResponse" type="tns:CrearNominaResponse" />
+  <xs:element name="CrearOperario" type="tns:CrearOperario" />
+  <xs:element name="CrearOperarioResponse" type="tns:CrearOperarioResponse" />
+  <xs:element name="CuentaNomina" type="tns:CuentaNomina" />
+  <xs:element name="CuentaNominaResponse" type="tns:CuentaNominaResponse" />
+  <xs:element name="Depositar" type="tns:Depositar" />
+  <xs:element name="DepositarResponse" type="tns:DepositarResponse" />
+  <xs:element name="EliminarEmpleado" type="tns:EliminarEmpleado" />
+  <xs:element name="EliminarEmpleadoResponse" type="tns:EliminarEmpleadoResponse" />
+  <xs:element name="ModificarSueldo" type="tns:ModificarSueldo" />
+  <xs:element name="ModificarSueldoResponse" type="tns:ModificarSueldoResponse" />
+  <xs:element name="Operaciones" type="tns:Operaciones" />
+  <xs:element name="OperacionesResponse" type="tns:OperacionesResponse" />
+  <xs:element name="Prestamos" type="tns:Prestamos" />
+  <xs:element name="PrestamosResponse" type="tns:PrestamosResponse" />
+  <xs:element name="Retirar" type="tns:Retirar" />
+  <xs:element name="RetirarResponse" type="tns:RetirarResponse" />
+  <xs:element name="TransferenciaDeposito" type="tns:TransferenciaDeposito" />
+  <xs:element name="TransferenciaDepositoResponse" type="tns:TransferenciaDepositoResponse" />
+  <xs:element name="TransferenciaRetiro" type="tns:TransferenciaRetiro" />
+  <xs:element name="TransferenciaRetiroResponse" type="tns:TransferenciaRetiroResponse" />
+  <xs:element name="Transferencias" type="tns:Transferencias" />
+  <xs:element name="TransferenciasResponse" type="tns:TransferenciasResponse" />
+  <xs:element name="ValidarCliente" type="tns:ValidarCliente" />
+  <xs:element name="ValidarClienteResponse" type="tns:ValidarClienteResponse" />
+  <xs:element name="ValidarOperario" type="tns:ValidarOperario" />
+  <xs:element name="ValidarOperarioResponse" type="tns:ValidarOperarioResponse" />
+  <xs:complexType name="BuscarCuentaNomina">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarCuentaNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidarOperario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidarOperarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:operarios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+      <xs:element name="idoperario" type="xs:int" />
+      <xs:element name="idtipooperario" type="xs:int" />
+      <xs:element minOccurs="0" name="sueldo" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AñadirProductos">
+    <xs:sequence>
+      <xs:element name="idproducto" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="valor" type="xs:int" />
+      <xs:element name="idpatrocinador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AñadirProductosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearOperario">
+    <xs:sequence>
+      <xs:element name="Idoperario" type="xs:int" />
+      <xs:element minOccurs="0" name="sueldo" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+      <xs:element name="idtipooperario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearOperarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearCuenta">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="saldo" type="xs:string" />
+      <xs:element name="interesmensual" type="xs:int" />
+      <xs:element name="plazo" type="xs:int" />
+      <xs:element name="idcliente" type="xs:int" />
+      <xs:element name="idtipocuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AñadirPatrocinador">
+    <xs:sequence>
+      <xs:element name="idpatrocinador" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AñadirPatrocinadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearCliente">
+    <xs:sequence>
+      <xs:element name="IdCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="CUI" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha_Nac" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Contraseña" type="xs:string" />
+      <xs:element name="Tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CambiarCheque">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element name="nocuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CambiarChequeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContarTransferencias">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="ContarTransferenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarCuenta">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarEmpleado">
+    <xs:sequence>
+      <xs:element name="idempleado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarEmpleadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CuentaNomina">
+    <xs:sequence>
+      <xs:element name="idcuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="saldo" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CuentaNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Depositar">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element minOccurs="0" name="Saldo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DepositarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregarEmpleado">
+    <xs:sequence>
+      <xs:element name="idcliente" type="xs:int" />
+      <xs:element name="idnomina" type="xs:int" />
+      <xs:element minOccurs="0" name="sueldo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregarEmpleadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarPatrocinador">
+    <xs:sequence>
+      <xs:element name="idpatrocinador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarPatrocinadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarSaldo">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarSaldoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Operaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="operacion" type="xs:string" />
+      <xs:element name="idoperario" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperacionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearNomina">
+    <xs:sequence>
+      <xs:element name="idnomina" type="xs:int" />
+      <xs:element minOccurs="0" name="empresa" type="xs:string" />
+      <xs:element name="idcliente" type="xs:int" />
+      <xs:element name="idcuenta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CrearNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarSueldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sueldo" type="xs:string" />
+      <xs:element name="idempleado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ModificarSueldoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferenciaRetiro">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferenciaRetiroResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Prestamos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element name="idmodalidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PrestamosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarCliente">
+    <xs:sequence>
+      <xs:element name="idcliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Retirar">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element minOccurs="0" name="saldo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RetirarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarNomina">
+    <xs:sequence>
+      <xs:element name="idnomina" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuscarNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidarCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidarClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:clientes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contraseña" type="xs:string" />
+      <xs:element minOccurs="0" name="cui" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha_nac" type="xs:string" />
+      <xs:element name="idcliente" type="xs:int" />
+      <xs:element name="idtipo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="puntos" type="xs:int" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferenciaDeposito">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="monto" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferenciaDepositoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transferencias">
+    <xs:sequence>
+      <xs:element name="idtransferencia" type="xs:int" />
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="fechainicio" type="xs:string" />
+      <xs:element minOccurs="0" name="fechafin" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransferenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:estadoDeCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estadoDeCuenta">
+    <xs:sequence>
+      <xs:element name="deposito" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element name="idTransferencia" type="xs:int" />
+      <xs:element name="noCuenta" type="xs:int" />
+      <xs:element name="retiro" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CambiarEstado">
+    <xs:sequence>
+      <xs:element name="nocuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CambiarEstadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarEmpleado">
+    <xs:sequence>
+      <xs:element name="idempleado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EliminarEmpleadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
